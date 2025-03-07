@@ -1,0 +1,13 @@
+{
+  "name": "desafio-01",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [],
+  "author": "Guilherme Alexandre",
+  "license": "ISC",
+  "description": "Desafio node ignite"
+}
