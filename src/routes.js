@@ -103,7 +103,7 @@ export const routes = [
   },
   {
     method: 'DELETE',
-    path: buildRoutePath('/tasks/reset'),
+    path: buildRoutePath('/reset'),
     handler: (req, res) => {
       database.reset('tasks')
       return res
