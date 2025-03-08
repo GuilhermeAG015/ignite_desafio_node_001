@@ -12,6 +12,12 @@ export const routes = [
     handler: (req, res) => {
       const { title, description } = req.body
 
+      if(!title || !description) {
+        return res
+          .writeHead(406)
+          .end('Title or description is missing')
+      }
+
       const formattedDate = formatDate()
 
       const task = {
