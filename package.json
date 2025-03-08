@@ -9,5 +9,8 @@
   "keywords": [],
   "author": "Guilherme Alexandre",
   "license": "ISC",
-  "description": "Desafio node ignite"
+  "description": "Desafio node ignite",
+  "dependencies": {
+    "date-fns": "^4.1.0"
+  }
 }

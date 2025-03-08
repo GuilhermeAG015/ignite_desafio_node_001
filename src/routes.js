@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto'
 import { Database } from './database.js'
 import { buildRoutePath } from './utils/buildRoutePath.js'
+import { formatDate } from './utils/formatDate.js'
 
 const database = new Database
 
@@ -25,8 +26,7 @@ export const routes = [
     handler: (req, res) => {
       const { title, description } = req.body
 
-      const date = new Date()
-      const formattedDate = date.toLocaleString()
+      const formattedDate = formatDate()
 
       const task = {
         id: randomUUID(),
