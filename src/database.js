@@ -70,8 +70,15 @@ export class Database {
         updated_at: data.updated_at
       }
       this.#persist()
-    } else {
-      return 'Id not found'
+    }
+  }
+
+  delete(table, id) {
+    const rowIndex = this.#rowIndex(table, id)
+
+    if (rowIndex > -1) {
+      this.#database[table].splice(rowIndex, 1)
+      this.#persist()
     }
   }
 }

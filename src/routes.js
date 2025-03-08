@@ -81,5 +81,24 @@ export const routes = [
         .writeHead(404)
         .end('Id not found')
     }
-  }
+  },
+  {
+    method: 'DELETE',
+    path: buildRoutePath('/tasks/:id'),
+    handler: (req, res) => {
+      const { id } = req.params
+
+      const hasIdOnDatabase = database.findById('tasks', id)
+      if (hasIdOnDatabase) {
+        database.delete('tasks', id)
+        return res
+          .writeHead(204)
+          .end()
+      }
+      
+      return res
+        .writeHead(404)
+        .end('Id not found')
+    }
+  },
 ]
