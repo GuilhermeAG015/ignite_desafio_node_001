@@ -14,8 +14,8 @@ export const routes = [
 
       if(!title || !description) {
         return res
-          .writeHead(406)
-          .end('Title or description is missing')
+          .writeHead(400)
+          .end(JSON.stringify({ message: 'Title or description are missing'}))
       }
 
       const formattedDate = formatDate()
@@ -62,8 +62,8 @@ export const routes = [
 
       if(!title || !description) {
         return res
-          .writeHead(406)
-          .end('Title or description is missing')
+          .writeHead(400)
+          .end(JSON.stringify({ message: 'Title or description are missing'}))
       }
 
       if (hasIdOnDatabase) {
