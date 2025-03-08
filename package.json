@@ -1,6 +1,6 @@
 {
   "name": "desafio-01",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "main": "server.js",
   "scripts": {
@@ -11,6 +11,6 @@
   "license": "ISC",
   "description": "Desafio node ignite",
   "dependencies": {
-    "date-fns": "^4.1.0"
+    "date-fns": "4.1.0"
   }
 }

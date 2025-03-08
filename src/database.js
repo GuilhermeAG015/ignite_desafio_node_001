@@ -44,4 +44,35 @@ export class Database {
 
     return data
   }
+
+  #rowIndex(table, id) {
+    return this.#database[table].findIndex(row => row.id === id)
+  }
+
+  findById(table, id) {
+    if (this.#rowIndex(table, id) > -1) {
+      return true
+    }
+    return false
+  }
+
+  update(table, id, data) {
+    const rowIndex = this.#rowIndex(table, id)
+
+    if (rowIndex > -1) {
+      const d = this.#database[table][rowIndex]
+      console.log(data)
+      this.#database[table][rowIndex] = {
+        id,
+        title: data.title,
+        description: data.description,
+        completed_at: d.completed_at,
+        created_at: d.created_at,
+        updated_at: data.updated_at
+      }
+      this.#persist()
+    } else {
+      return 'Id not found'
+    }
+  }
 }
