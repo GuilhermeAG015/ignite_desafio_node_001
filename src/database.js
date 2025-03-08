@@ -61,7 +61,6 @@ export class Database {
 
     if (rowIndex > -1) {
       const d = this.#database[table][rowIndex]
-      console.log(data)
       this.#database[table][rowIndex] = {
         id,
         title: data.title,
