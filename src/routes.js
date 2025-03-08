@@ -101,4 +101,14 @@ export const routes = [
         .end('Id not found')
     }
   },
+  {
+    method: 'DELETE',
+    path: buildRoutePath('/tasks/reset'),
+    handler: (req, res) => {
+      database.reset('tasks')
+      return res
+        .writeHead(204)
+        .end()
+    }
+  },
 ]

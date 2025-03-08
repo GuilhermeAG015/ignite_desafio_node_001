@@ -81,4 +81,9 @@ export class Database {
       this.#persist()
     }
   }
+
+  reset(table) {
+    this.#database[table] = {}
+    this.#persist()
+  }
 }
