@@ -54,6 +54,12 @@ export const routes = [
 
       const hasIdOnDatabase = database.findById('tasks', id)
 
+      if(!title || !description) {
+        return res
+          .writeHead(406)
+          .end('Title or description is missing')
+      }
+
       if (hasIdOnDatabase) {
         database.update('tasks', id, {
           title,
